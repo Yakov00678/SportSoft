@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Fitness PWA</title>
+
+  <!-- Стилизация верхнего статус-бара iOS под тёмную тему -->
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Подключение Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Выпадающий список выбора пользователя -->
+    <header class="user-selector-card">
+      <label for="user-select" class="selector-label">Спортсмен:</label>
+      <select id="user-select" class="user-dropdown">
+        <option value="">Загрузка пользователей...</option>
+      </select>
+    </header>
+
+    <!-- Главная навигация (кнопки строго друг за другом) -->
+    <main class="menu-grid">
+      
+      <a href="routine.html" class="menu-card">
+        <div class="card-icon">📅</div>
+        <div class="card-content">
+          <div class="card-title">Дневной распорядок</div>
+          <div class="card-subtitle">Зарядка и привычки</div>
+        </div>
+      </a>
+
+      <a href="workouts.html?type=main" class="menu-card">
+        <div class="card-icon">🏋️‍♂️</div>
+        <div class="card-content">
+          <div class="card-title">Основные тренировки</div>
+          <div class="card-subtitle">Силовые программы</div>
+        </div>
+      </a>
+
+      <a href="workouts.html?type=recovery" class="menu-card">
+        <div class="card-icon">🧘‍♂️</div>
+        <div class="card-content">
+          <div class="card-title">Восстанавливающие</div>
+          <div class="card-subtitle">Растяжка и MFR</div>
+        </div>
+      </a>
+
+      <a href="nutrition.html" class="menu-card">
+        <div class="card-icon">🥗</div>
+        <div class="card-content">
+          <div class="card-title">Питание</div>
+          <div class="card-subtitle">Вода и рецепты</div>
+        </div>
+      </a>
+
+    </main>
+
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
