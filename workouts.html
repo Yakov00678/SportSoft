@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тренировки</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="page-header">
+      <a href="index.html" class="back-button">‹ Назад</a>
+      <h1 class="page-title">Тренировки</h1>
+    </header>
+
+    <!-- Переключатель дней недели -->
+    <div class="days-selector" id="days-selector">
+      <button class="day-btn" data-day="1">ПН</button>
+      <button class="day-btn" data-day="2">ВТ</button>
+      <button class="day-btn" data-day="3">СР</button>
+      <button class="day-btn" data-day="4">ЧТ</button>
+      <button class="day-btn" data-day="5">ПТ</button>
+      <button class="day-btn" data-day="6">СБ</button>
+      <button class="day-btn" data-day="7">ВС</button>
+    </div>
+
+    <main id="workouts-list" class="workouts-list">
+      <div class="loading-state">Загрузка тренировок...</div>
+    </main>
+  </div>
+
+  <script src="js/workouts.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дневной распорядок</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="page-header">
+      <a href="index.html" class="back-button">‹ Назад</a>
+      <h1 class="page-title">Распорядок</h1>
+      <!-- Иконка вызова календаря -->
+      <button id="calendar-toggle-btn" class="calendar-icon-btn" aria-label="Календарь">📅</button>
+    </header>
+
+    <!-- Переключатель дней недели ПН–ВС -->
+    <div class="days-selector" id="days-selector">
+      <button class="day-btn" data-day="1">ПН</button>
+      <button class="day-btn" data-day="2">ВТ</button>
+      <button class="day-btn" data-day="3">СР</button>
+      <button class="day-btn" data-day="4">ЧТ</button>
+      <button class="day-btn" data-day="5">ПТ</button>
+      <button class="day-btn" data-day="6">СБ</button>
+      <button class="day-btn" data-day="7">ВС</button>
+    </div>
+
+    <!-- Выбранная дата для наглядности -->
+    <div id="current-date-display" class="date-badge"></div>
+
+    <!-- Список задач/привычек -->
+    <main id="routine-list" class="workouts-list">
+      <div class="loading-state">Загрузка распорядка...</div>
+    </main>
+  </div>
+
+  <!-- Всплывающее окно (Модалка) с календарем на месяц -->
+  <div id="calendar-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <button id="prev-month-btn" class="month-nav-btn">‹</button>
+        <span id="month-year-label" class="month-label"></span>
+        <button id="next-month-btn" class="month-nav-btn">›</button>
+      </div>
+      <div class="month-grid-header">
+        <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+      </div>
+      <div id="month-days-grid" class="month-days-grid"></div>
+      <button id="close-modal-btn" class="close-modal-btn">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="js/routine.js"></script>
+</body>
+</html>

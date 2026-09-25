@@ -18,15 +18,15 @@ body {
 
 .app-container {
   width: 100%;
-  max-width: 480px; /* Идеальная ширина для смартфонов и ПК */
+  max-width: 480px; /* Оптимальная ширина под экраны смартфонов */
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* Карточка выпадающего списка сверху */
+/* --- Карточка выбора пользователя --- */
 .user-selector-card {
-  background: #1c1c1e; /* Тёмно-серый цвет элементов iOS */
+  background: #1c1c1e;
   padding: 14px 18px;
   border-radius: 16px;
   display: flex;
@@ -38,7 +38,7 @@ body {
 .selector-label {
   font-weight: 600;
   font-size: 16px;
-  color: #8e8e93; /* Системный серый */
+  color: #8e8e93;
 }
 
 .user-dropdown {
@@ -53,7 +53,7 @@ body {
   cursor: pointer;
 }
 
-/* Вертикальный список кнопок друг за другом */
+/* --- Навигационное меню --- */
 .menu-grid {
   display: flex;
   flex-direction: column;
@@ -101,4 +101,310 @@ body {
 .card-subtitle {
   font-size: 13px;
   color: #8e8e93;
+}
+
+/* --- Шапка страницы с кнопкой «Назад» --- */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-bottom: 8px;
+}
+
+.back-button {
+  color: #0a84ff;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* --- Список и карточки тренировок --- */
+.workouts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.workout-card {
+  background: #1c1c1e;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid #2c2c2e;
+}
+
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #2c2c2e;
+  padding-bottom: 10px;
+}
+
+.workout-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.workout-day {
+  font-size: 12px;
+  background: #2c2c2e;
+  color: #0a84ff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* --- Список упражнений (Аккордеон) --- */
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Индивидуальная карточка-спойлер для упражнения */
+.exercise-item {
+  background: #2c2c2e;
+  border-radius: 14px;
+  border: 1px solid #3a3a3c;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+/* Заголовок спойлера (виден всегда) */
+.exercise-summary {
+  padding: 14px 16px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none; /* Скрываем дефолтную стрелку браузера */
+  user-select: none;
+}
+
+.exercise-summary::-webkit-details-marker {
+  display: none; /* Для браузеров Safari/Chrome */
+}
+
+/* Кастомная иконка стрелочки */
+.chevron-icon {
+  font-size: 20px;
+  color: #8e8e93;
+  transition: transform 0.2s ease;
+}
+
+/* Поворот стрелочки при открытии аккордеона */
+.exercise-item[open] .chevron-icon {
+  transform: rotate(90deg);
+  color: #0a84ff;
+}
+
+/* Раскрывающийся блок с медиа и текстом */
+.exercise-content {
+  border-top: 1px solid #3a3a3c;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-media {
+  width: 100%;
+  height: 220px;
+  background-color: #1c1c1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #3a3a3c;
+}
+
+.exercise-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.exercise-details {
+  padding: 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #d1d1d6;
+  margin: 0;
+}
+
+/* --- Состояния загрузки и пустых данных --- */
+.loading-state,
+.empty-state {
+  text-align: center;
+  color: #8e8e93;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+/* Переключатель дней в стиле iOS */
+.days-selector {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #1c1c1e;
+  border-radius: 12px;
+  margin: 12px 16px;
+}
+
+.day-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #8e8e93;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day-btn.active {
+  background: #0a84ff;
+  color: #ffffff;
+}
+
+/* Кнопка с иконкой календаря в шапке */
+.calendar-icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Красивая плашка с текущей выбранной датой */
+.date-badge {
+  text-align: center;
+  font-size: 13px;
+  color: #8e8e93;
+  margin-top: -6px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+/* --- Всплывающее модальное окно календаря --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+.modal-card {
+  background: #1c1c1e;
+  border: 1px solid #2c2c2e;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.month-nav-btn {
+  background: #2c2c2e;
+  border: none;
+  color: #0a84ff;
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.month-grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8e8e93;
+}
+
+.month-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.month-day {
+  aspect-ratio: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.month-day.empty {
+  cursor: default;
+}
+
+.month-day.today {
+  border: 1px solid #0a84ff;
+}
+
+.month-day.selected {
+  background: #0a84ff;
+  color: #fff;
+  font-weight: 700;
+}
+
+.close-modal-btn {
+  background: #2c2c2e;
+  border: none;
+  color: #ff453a;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
 }
