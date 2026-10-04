@@ -3,8 +3,76 @@ let currentDay = getCurrentDayOfWeek(); // Определяем сегодняш
 
 document.addEventListener('DOMContentLoaded', () => {
   setupDaySelector();
+  setupNutritionRulesModal();
+  setupNutritionTabooModal();
   loadNutrition();
 });
+
+function setupNutritionRulesModal() {
+  const button = document.getElementById('nutrition-rules-btn');
+  const modal = document.getElementById('nutrition-rules-modal');
+
+  if (!button || !modal) return;
+
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+  };
+
+  button.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  modal.querySelectorAll('[data-close]').forEach((trigger) => {
+    trigger.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+}
+
+function setupNutritionTabooModal() {
+  const button = document.getElementById('nutrition-taboo-btn');
+  const modal = document.getElementById('nutrition-taboo-modal');
+
+  if (!button || !modal) return;
+
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+  };
+
+  button.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  modal.querySelectorAll('[data-close]').forEach((trigger) => {
+    trigger.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+}
 
 // Функция для определения текущего дня недели (1 = ПН, ..., 7 = ВС)
 function getCurrentDayOfWeek() {

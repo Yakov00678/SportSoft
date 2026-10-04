@@ -255,6 +255,42 @@ body {
 }
 
 /* Переключатель дней в стиле iOS */
+.nutrition-actions-row {
+  display: flex;
+  gap: 10px;
+  margin: 4px 0 8px;
+}
+
+.rules-button {
+  flex: 1;
+  border: 1px solid #2c2c2e;
+  background: linear-gradient(180deg, #1c1c1e 0%, #2c2c2e 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.rules-button:active {
+  transform: scale(0.98);
+  background: #2c2c2e;
+}
+
+#nutrition-rules-btn {
+  background: linear-gradient(180deg, rgba(22, 60, 42, 0.95) 0%, rgba(31, 87, 58, 0.95) 100%);
+  border-color: rgba(156, 214, 171, 0.35);
+  color: #ebfff0;
+}
+
+.taboo-button {
+  background: linear-gradient(180deg, rgba(62, 24, 27, 0.95) 0%, rgba(80, 32, 36, 0.95) 100%);
+  border-color: rgba(255, 158, 158, 0.28);
+  color: #ffe2e2;
+}
+
 .days-selector {
   display: flex;
   justify-content: space-between;
@@ -323,8 +359,8 @@ body {
 }
 
 .modal-card {
-  background: #1c1c1e;
-  border: 1px solid #2c2c2e;
+  background: linear-gradient(180deg, rgba(28, 28, 30, 0.98) 0%, rgba(26, 26, 28, 0.98) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.28);
   border-radius: 20px;
   padding: 20px;
   width: 100%;
@@ -332,6 +368,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
 }
 
 .modal-header {
@@ -407,4 +444,98 @@ body {
   font-size: 15px;
   cursor: pointer;
   margin-top: 8px;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rules-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #7cc6ff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #e5e5ea;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.rules-modal-card {
+  background: linear-gradient(180deg, rgba(19, 42, 31, 0.98) 0%, rgba(22, 50, 35, 0.98) 100%);
+  border: 1px solid rgba(156, 214, 171, 0.35);
+  box-shadow: 0 16px 30px rgba(35, 82, 52, 0.35);
+}
+
+.rules-modal-header {
+  border-bottom: 1px solid rgba(186, 239, 196, 0.14);
+  padding-bottom: 8px;
+}
+
+.rules-modal-title {
+  color: #ecfff0;
+}
+
+.rules-modal-close {
+  background: rgba(255, 255, 255, 0.06);
+  color: #9fe0ae;
+}
+
+.rules-modal-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(186, 239, 196, 0.12);
+  border-left: 3px solid #9fe0ae;
+  color: #ebfff0;
+}
+
+.taboo-modal-card {
+  background: linear-gradient(180deg, rgba(48, 20, 22, 0.98) 0%, rgba(36, 18, 20, 0.98) 100%);
+  border: 1px solid rgba(255, 138, 138, 0.35);
+  box-shadow: 0 16px 30px rgba(123, 34, 40, 0.35);
+}
+
+.taboo-modal-header {
+  border-bottom: 1px solid rgba(255, 180, 180, 0.14);
+  padding-bottom: 8px;
+}
+
+.taboo-modal-title {
+  color: #ffe2e2;
+}
+
+.taboo-modal-close {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ff9c9c;
+}
+
+.taboo-rules-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 170, 170, 0.12);
+  border-left: 3px solid #ff8a8a;
+  color: #f9d7d7;
+}
+
+.taboo-action-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff9a9a 100%);
+  box-shadow: 0 8px 16px rgba(255, 107, 107, 0.24);
+}
+
+.rules-action-btn {
+  background: linear-gradient(135deg, #0a84ff 0%, #4f9cff 100%);
+  border: none;
+  color: #ffffff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 8px 16px rgba(10, 132, 255, 0.25);
+}
+
+.rules-action-green {
+  background: linear-gradient(135deg, #0a84ff 0%, #4f9cff 100%);
+  box-shadow: 0 8px 16px rgba(97, 183, 125, 0.25);
 }

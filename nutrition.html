@@ -16,6 +16,11 @@
       <h1 class="page-title" id="page-title">Питание</h1>
     </header>
 
+    <div class="nutrition-actions-row">
+      <button id="nutrition-rules-btn" class="rules-button" type="button">Правила питания</button>
+      <button id="nutrition-taboo-btn" class="rules-button taboo-button" type="button">Нельзя есть</button>
+    </div>
+
     <!-- Переключатель дней недели -->
     <div class="days-selector" id="days-selector">
       <button class="day-btn active" data-day="1">ПН</button>
@@ -30,6 +35,44 @@
     <main id="nutrition-list" class="workouts-list">
       <div class="loading-state">Загрузка плана питания...</div>
     </main>
+  </div>
+
+  <div id="nutrition-rules-modal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal-card rules-modal-card">
+      <div class="modal-header rules-modal-header">
+        <h2 class="month-label rules-modal-title">Правила питания</h2>
+        <button type="button" class="month-nav-btn rules-modal-close" aria-label="Закрыть правила питания" data-close="nutrition-rules-modal">×</button>
+      </div>
+
+      <div class="rules-list rules-modal-list">
+        <div class="rules-item rules-modal-item">Перед приемом пищи выпить стакан воды.</div>
+        <div class="rules-item rules-modal-item">Есть первым блюдом клетчатку.</div>
+        <div class="rules-item rules-modal-item">В каждом приеме пищи должно быть достаточно белка.</div>
+        <div class="rules-item rules-modal-item">Использовать только хорошие жиры(добовлять масла).</div>
+        <div class="rules-item rules-modal-item">Есть угливоды в последнюю очередь.</div>
+      </div>
+
+      <button type="button" class="rules-action-btn rules-action-green" data-close="nutrition-rules-modal">Понятно</button>
+    </div>
+  </div>
+
+  <div id="nutrition-taboo-modal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal-card taboo-modal-card">
+      <div class="modal-header taboo-modal-header">
+        <h2 class="month-label taboo-modal-title">Нельзя есть</h2>
+        <button type="button" class="month-nav-btn taboo-modal-close" aria-label="Закрыть список запретов" data-close="nutrition-taboo-modal">×</button>
+      </div>
+
+      <div class="rules-list taboo-rules-list">
+        <div class="rules-item taboo-rules-item">Фастфуд и готовые полуфабрикаты.</div>
+        <div class="rules-item taboo-rules-item">Сладкие газированные напитки и энергетики.</div>
+        <div class="rules-item taboo-rules-item">Белый хлеб, выпечка и сладости в больших количествах.</div>
+        <div class="rules-item taboo-rules-item">Жирная, жареная и очень солёная пища.</div>
+        <div class="rules-item taboo-rules-item">Чрезмерно сладкие десерты и ночные перекусы.</div>
+      </div>
+
+      <button type="button" class="rules-action-btn taboo-action-btn" data-close="nutrition-taboo-modal">Понятно</button>
+    </div>
   </div>
 
   <script src="js/nutrition.js"></script>
